@@ -1,4 +1,3 @@
-import { style } from "@angular/animations";
 import {
   AfterContentInit,
   Component,
@@ -41,6 +40,7 @@ import { ListItem } from "./list-item";
     `
   ]
 })
+
 export class ChildListComponent implements ListComponent, AfterContentInit {
   @Input() items: ListItem[];
 
