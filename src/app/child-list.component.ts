@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { ListItem } from "./list-item";
 
 @Component({
   selector: "child-list",
@@ -7,5 +8,5 @@ import { Component, Input } from "@angular/core";
   `
 })
 export class ChildListComponent {
-  @Input() items: any[];
+  @Input() items: ListItem[];
 }
