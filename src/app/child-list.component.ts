@@ -1,5 +1,6 @@
 import { style } from "@angular/animations";
 import { Component, Input } from "@angular/core";
+import { ListComponent } from "./list-component";
 import { ListItem } from "./list-item";
 
 @Component({
@@ -27,7 +28,7 @@ import { ListItem } from "./list-item";
     `
   ]
 })
-export class ChildListComponent {
+export class ChildListComponent implements ListComponent{
   @Input() items: ListItem[];
 
   toggle(index: number): void {
