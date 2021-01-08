@@ -1,13 +1,12 @@
 import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: "hello",
+  selector: "parent",
   template: `
-    <h1>Hello {{ name }}!</h1>
-    
+    <child-list [items]=""></child-list>
   `,
   styles: [``]
 })
 export class ParentComponent {
-  @Input() name: string;
+  
 }
