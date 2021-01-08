@@ -13,10 +13,10 @@ export class ParentComponent {
 
   constructor() {
     this.items = [
-      { name: "list item 1", display: true },
-      { name: "list item 2", display: false },
-      { name: "list item 3", display: false },
-      { name: "list item 4", display: false }    
+      { name: "List item 1", display: false },
+      { name: "List item 2", display: false },
+      { name: "List item 3", display: false },
+      { name: "List item 4", display: false }    
     ];
   }
 }
