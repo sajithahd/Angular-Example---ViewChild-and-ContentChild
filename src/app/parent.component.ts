@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, Input, ViewChild } from "@angular/core";
-import { ChildListComponent } from "./child-list.component";
 import { ListComponent } from "./list-component";
 import { ListItem } from "./list-item";
 
@@ -16,7 +15,7 @@ import { ListItem } from "./list-item";
       >
     </div>
     <child-list [items]="items" #list>
-      <div>Projected Content</div>
+      <div contentIdentifier>Projected Content</div>
     </child-list>
 
     

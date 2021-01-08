@@ -1,5 +1,12 @@
 import { style } from "@angular/animations";
-import { Component, Input } from "@angular/core";
+import {
+  AfterContentInit,
+  Component,
+  ContentChild,
+  Input,
+  Renderer2
+} from "@angular/core";
+import { ContentIdentifierDirective } from "./content-identifier.directive";
 import { ListComponent } from "./list-component";
 import { ListItem } from "./list-item";
 
@@ -32,8 +39,17 @@ import { ListItem } from "./list-item";
     `
   ]
 })
-export class ChildListComponent implements ListComponent{
+export class ChildListComponent implements ListComponent, AfterContentInit {
   @Input() items: ListItem[];
+
+  @ContentChild(ContentIdentifierDirective)
+  contentChild: ContentIdentifierDirective;
+
+  constructor(private renderer: Renderer2) {}
+
+  ngAfterContentInit(): void {
+
+  }
 
   toggle(index: number): void {
     this.items[index].display = !this.items[index].display;
