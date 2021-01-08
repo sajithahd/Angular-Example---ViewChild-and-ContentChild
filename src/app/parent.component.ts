@@ -5,7 +5,7 @@ import { ListItem } from "./list-item";
 @Component({
   selector: "parent",
   template: `
-    <div>
+    <div class="trigger-wrapper">
       <span
         class="item-trigger"
         (click)="toggle(i)"
@@ -18,11 +18,15 @@ import { ListItem } from "./list-item";
   `,
   styles: [
     `
+      .trigger-wrapper {
+        margin-bottom: 30px;
+      }
       .item-trigger {
         background: green;
         padding: 10px;
         margin: 2px;
         border-radius: 4px;
+        cursor: pointer;
       }
     `
   ]
@@ -30,7 +34,7 @@ import { ListItem } from "./list-item";
 export class ParentComponent {
   items: ListItem[];
 
-  @ViewChild("listComponent") listComponent: ListComponent;
+  @ViewChild("list") listComponent: ListComponent;
 
   constructor() {
     this.items = [
