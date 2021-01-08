@@ -5,7 +5,7 @@ import { ListItem } from "./list-item";
   selector: "parent",
   template: `
     <div>
-      <span *ngFor="let item of items; i = index"> {{item.display}}</span>
+      <span *ngFor="let item of items; let i = index"> {{item.name}}</span>
     </div>
     <child-list [items]="items"></child-list>
   `,
