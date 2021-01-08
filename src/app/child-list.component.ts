@@ -1,15 +1,12 @@
-import { Component } from "@angular/core";
-
+import { Component, Input } from "@angular/core";
 
 @Component({
-
-  selector: 'child-list',
-  template:`
-    
+  selector: "child-list",
+  template: `
+    <div *ngFor="let item of items; let i = index"
+    >{{}item.name}</div>
   `
 })
-
-
-export class ChildListComponent{
-
+export class ChildListComponent {
+  @Input() items: any[];
 }
