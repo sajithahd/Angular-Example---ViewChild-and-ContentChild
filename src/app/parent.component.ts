@@ -5,11 +5,22 @@ import { ListItem } from "./list-item";
   selector: "parent",
   template: `
     <div>
-      <span *ngFor="let item of items; let i = index"> {{item.name}}</span>
+      <span class="item-trigger" *ngFor="let item of items; let i = index">
+        {{ item.name }}</span
+      >
     </div>
     <child-list [items]="items"></child-list>
   `,
-  styles: [``]
+  styles: [
+    `
+      .item-trigger {
+        background: green;
+        padding: 10px;
+        margin: 2px;
+        border-radius: 4px;
+      }
+    `
+  ]
 })
 export class ParentComponent {
   items: ListItem[];
