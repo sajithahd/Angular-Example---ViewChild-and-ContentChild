@@ -15,7 +15,11 @@ import { ListItem } from "./list-item";
         {{ item.name }}</span
       >
     </div>
-    <child-list [items]="items" #list></child-list>
+    <child-list [items]="items" #list>
+      <div>Projected Content</div>
+    </child-list>
+
+    
   `,
   styles: [
     `

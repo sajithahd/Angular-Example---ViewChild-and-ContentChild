@@ -14,6 +14,8 @@ import { ListItem } from "./list-item";
     >
       {{ item.name }}
     </div>
+
+    <ng-content></ng-content>
   `,
   styles: [
     `
