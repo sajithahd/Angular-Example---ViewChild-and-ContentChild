@@ -1,4 +1,5 @@
 import { Component, Input, ViewChild } from "@angular/core";
+import { ChildListComponent } from "./child-list.component";
 import { ListComponent } from "./list-component";
 import { ListItem } from "./list-item";
 
@@ -34,7 +35,7 @@ import { ListItem } from "./list-item";
 export class ParentComponent {
   items: ListItem[];
 
-  @ViewChild("list") listComponent: ListComponent;
+  @ViewChild(ChildListComponent) listComponent: ListComponent;
 
   constructor() {
     this.items = [
