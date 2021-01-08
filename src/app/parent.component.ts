@@ -17,8 +17,6 @@ import { ListItem } from "./list-item";
     <child-list [items]="items" #list>
       <div contentIdentifier>Projected Content</div>
     </child-list>
-
-    
   `,
   styles: [
     `
@@ -32,6 +30,11 @@ import { ListItem } from "./list-item";
         border-radius: 4px;
         cursor: pointer;
       }
+      .content {
+        background: green;
+        padding: 20px;
+        border-radius: 4px;
+      }
     `
   ]
 })
@@ -41,8 +44,7 @@ export class ParentComponent implements AfterViewInit {
   // @ViewChild(ChildListComponent) listComponent: ListComponent;
 
   // 2. string tag based reffrencing
-  @ViewChild('list') listComponent: ListComponent;
-
+  @ViewChild("list") listComponent: ListComponent;
 
   constructor() {
     this.items = [
