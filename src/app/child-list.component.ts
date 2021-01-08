@@ -3,6 +3,7 @@ import {
   AfterContentInit,
   Component,
   ContentChild,
+ElementRef,
   Input,
   Renderer2
 } from "@angular/core";
@@ -36,19 +37,23 @@ import { ListItem } from "./list-item";
         margin-bottom: 4px;
         border-radius: 4px;
       }
+      .content{
+        background: green;
+        padding: 20px;
+      }
     `
   ]
 })
 export class ChildListComponent implements ListComponent, AfterContentInit {
   @Input() items: ListItem[];
 
-  @ContentChild(ContentIdentifierDirective)
-  contentChild: ContentIdentifierDirective;
+  @ContentChild(ContentIdentifierDirective, {read: ElementRef})
+  contentChild: ElementRef;
 
   constructor(private renderer: Renderer2) {}
 
   ngAfterContentInit(): void {
-
+    this.renderer.addClass(this.contentChild.nativeElement, 'content');
   }
 
   toggle(index: number): void {
