@@ -5,7 +5,11 @@ import { ListItem } from "./list-item";
   selector: "parent",
   template: `
     <div>
-      <span class="item-trigger" *ngFor="let item of items; let i = index">
+      <span
+        class="item-trigger"
+        (click)="toggle(i)"
+        *ngFor="let item of items; let i = index"
+      >
         {{ item.name }}</span
       >
     </div>
@@ -33,4 +37,6 @@ export class ParentComponent {
       { name: "List item 4", display: false }
     ];
   }
+  
+  toggle(index: number): void {}
 }
