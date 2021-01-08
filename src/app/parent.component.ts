@@ -1,4 +1,5 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ViewChild } from "@angular/core";
+import { ListComponent } from "./list-component";
 import { ListItem } from "./list-item";
 
 @Component({
@@ -29,6 +30,8 @@ import { ListItem } from "./list-item";
 export class ParentComponent {
   items: ListItem[];
 
+  @ViewChild("listComponent") listComponent: ListComponent;
+
   constructor() {
     this.items = [
       { name: "List item 1", display: false },
@@ -37,6 +40,8 @@ export class ParentComponent {
       { name: "List item 4", display: false }
     ];
   }
-  
-  toggle(index: number): void {}
+
+  toggle(index: number): void {
+    this.listComponent.toggle(index);
+  }
 }
