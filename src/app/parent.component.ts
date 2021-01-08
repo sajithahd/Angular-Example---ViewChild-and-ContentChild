@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, Input, ViewChild } from "@angular/core";
 import { ChildListComponent } from "./child-list.component";
 import { ListComponent } from "./list-component";
 import { ListItem } from "./list-item";
@@ -32,13 +32,14 @@ import { ListItem } from "./list-item";
     `
   ]
 })
-export class ParentComponent {
+export class ParentComponent implements AfterViewInit {
   items: ListItem[];
   // 1. Component or Directive based reffrencing
-  @ViewChild(ChildListComponent) listComponent: ListComponent;
+  // @ViewChild(ChildListComponent) listComponent: ListComponent;
 
   // 2. string tag based reffrencing
-  // @ViewChild('list') listComponent: ListComponent;
+  @ViewChild('list') listComponent: ListComponent;
+
 
   constructor() {
     this.items = [
@@ -47,6 +48,10 @@ export class ParentComponent {
       { name: "List item 3", display: false },
       { name: "List item 4", display: false }
     ];
+  }
+
+  ngAfterViewInit(): void {
+    // console.log(this.listComponent);
   }
 
   toggle(index: number): void {
