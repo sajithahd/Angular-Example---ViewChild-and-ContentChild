@@ -15,7 +15,7 @@ import { ListItem } from "./list-item";
         {{ item.name }}</span
       >
     </div>
-    <child-list [items]="items"></child-list>
+    <child-list [items]="items" #list></child-list>
   `,
   styles: [
     `
@@ -34,8 +34,11 @@ import { ListItem } from "./list-item";
 })
 export class ParentComponent {
   items: ListItem[];
-
+  // 1. Component or Directive based reffrencing
   @ViewChild(ChildListComponent) listComponent: ListComponent;
+
+  // 2. string tag based reffrencing
+  // @ViewChild('list') listComponent: ListComponent;
 
   constructor() {
     this.items = [
