@@ -24,6 +24,8 @@ import { ListItem } from "./list-item";
 
       .selected {
         background: #999;
+        margin: 2px;
+        border-radius: 4px;
       }
     `
   ]
